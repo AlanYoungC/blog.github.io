@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>使用Hexo建立个人博客 | Alan's Blog</title><meta name="description" content="从零开始使用Hexo和GitHub建立自己的第一个博客。除了提供Hexo的搭建方法，还提供了一些常见问题的解决方法。"><meta name="keywords" content="Hexo"><meta name="author" content="AlanYoungC"><meta name="copyright" content="AlanYoungC"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://yoursite.com/2020/08/12/%E4%BD%BF%E7%94%A8Hexo%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="使用Hexo建立个人博客"><meta property="og:url" content="http://yoursite.com/2020/08/12/%E4%BD%BF%E7%94%A8Hexo%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"><meta property="og:site_name" content="Alan's Blog"><meta property="og:description" content="从零开始使用Hexo和GitHub建立自己的第一个博客。除了提供Hexo的搭建方法，还提供了一些常见问题的解决方法。"><meta property="og:image" content="https://gitee.com/AlanYoungC/MarkDown-PicHub/raw/master/HexoBlog/Hexo建立个人博客.png"><meta property="article:published_time" content="2020-08-12T12:02:28.761Z"><meta property="article:modified_time" content="2020-08-12T12:21:26.637Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.0.2',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: {"limitCount":10,"languages":{"author":"作者: AlanYoungC","link":"链接: ","source":"来源: Alan's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2020-08-12 20:21:26'
+}</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><style type="text/css">#toggle-sidebar {bottom: 80px}</style><meta name="generator" content="Hexo 5.0.2"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="/personalsource/userimg.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">6</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">5</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><div id="sidebar"><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E6%93%8D%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">主要操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%96%91%E9%9A%BE%E9%97%AE%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">疑难问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-%E9%83%A8%E7%BD%B2%E5%88%B0-github-%E4%B8%8A%EF%BC%8Ccss%E3%80%81js-%E6%96%87%E4%BB%B6%E5%8A%A0%E8%BD%BD%E4%B8%8D%E5%87%BA%E6%9D%A5%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="toc-number">2.1.</span> <span class="toc-text">hexo 部署到 github 上，css、js 文件加载不出来怎么办</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E9%98%BF%E9%87%8C%E4%BA%91%E5%B7%B2%E7%BB%8F%E7%BB%91%E5%AE%9A%E4%BA%86GitHub%E7%9A%84%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E5%9F%9F%E5%90%8D%EF%BC%8C%E4%BD%BF%E7%94%A8%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AE%E7%9A%84%E6%97%B6%E5%80%99%EF%BC%8C%E5%87%BA%E7%8E%B0GitHub%E7%9A%84404%E9%A1%B5%E9%9D%A2%EF%BC%8C%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F"><span class="toc-number">2.2.</span> <span class="toc-text">在阿里云已经绑定了GitHub的静态网页域名，使用自己的域名访问的时候，出现GitHub的404页面，怎么办？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%A4%9A%E6%A0%87%E7%AD%BE%EF%BC%9F"><span class="toc-number">2.3.</span> <span class="toc-text">如何实现一篇文章多标签？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8E%A8%E8%8D%90%E7%9A%84%E4%B8%BB%E9%A2%98-Butterfly"><span class="toc-number">3.</span> <span class="toc-text">推荐的主题-Butterfly</span></a></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://gitee.com/AlanYoungC/MarkDown-PicHub/raw/master/HexoBlog/Hexo建立个人博客.png)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Alan's Blog</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">使用Hexo建立个人博客</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-08-12T12:02:28.761Z" title="发表于 2020-08-12 20:02:28">2020-08-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-08-12T12:21:26.637Z" title="更新于 2020-08-12 20:21:26">2020-08-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF%E7%B1%BB/">技术类</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h1 id="主要操作"><a href="#主要操作" class="headerlink" title="主要操作"></a>主要操作</h1><p>使用 Github Pages 和 Hexo 搭建自己的独立博客<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36759224/article/details/82121420">https://blog.csdn.net/qq_36759224/article/details/82121420</a> </p>
+<p>Hexo 双线部署到 Coding Pages 和 GitHub Pages 并实现全站 HTTPS<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36759224/article/details/100879609">https://blog.csdn.net/qq_36759224/article/details/100879609</a></p>
+<h1 id="疑难问题"><a href="#疑难问题" class="headerlink" title="疑难问题"></a>疑难问题</h1><h2 id="hexo-部署到-github-上，css、js-文件加载不出来怎么办"><a href="#hexo-部署到-github-上，css、js-文件加载不出来怎么办" class="headerlink" title="hexo 部署到 github 上，css、js 文件加载不出来怎么办"></a>hexo 部署到 github 上，css、js 文件加载不出来怎么办</h2><blockquote>
+<p>1.修改hexo中 _config.yml 文件：<br>注意，root 后面写你 github 仓库的名字，前后斜杠都不能省！</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">url: http://yoursite.com</span><br><span class="line">root: /blog/</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>2.重新上传</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo d -g</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p><font size=5 color=red>注意</font> 以上方法仅适用于单线部署到Github，若采用双线部署，无需采取以上方式，否则会导致coding pages的静态页面出现css渲染出错。</p>
+</blockquote>
+<h2 id="在阿里云已经绑定了GitHub的静态网页域名，使用自己的域名访问的时候，出现GitHub的404页面，怎么办？"><a href="#在阿里云已经绑定了GitHub的静态网页域名，使用自己的域名访问的时候，出现GitHub的404页面，怎么办？" class="headerlink" title="在阿里云已经绑定了GitHub的静态网页域名，使用自己的域名访问的时候，出现GitHub的404页面，怎么办？"></a>在阿里云已经绑定了GitHub的静态网页域名，使用自己的域名访问的时候，出现GitHub的404页面，怎么办？</h2><blockquote>
+<p>在Hexo的根目录/source创建一个<code>CNAME</code>文件，没有任何后缀，用记事本打开，在里面添加上自己绑定的域名，如</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alanyoungc.top</span><br><span class="line">wwwalanyoungc.top</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>然后保存，执行以下命令，即可正常通过绑定的域名访问页面。</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo d -g</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="如何实现一篇文章多标签？"><a href="#如何实现一篇文章多标签？" class="headerlink" title="如何实现一篇文章多标签？"></a>如何实现一篇文章多标签？</h2><p>在文章顶部的信息栏中采用如下方式书写即可</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tags:</span><br><span class="line">- 标签<span class="number">1</span></span><br><span class="line">- 标签<span class="number">2</span></span><br><span class="line">- 标签<span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<div class="note warning">
+            <p>每一个<code>标签名称</code>和前面的<code>连接号 -</code>中间都会有一个空格。若不添加空格，会导致文章无法正常编译！</p><p>在HEXO中，变量与信息之间添加空格，都是通用的，否则很大程度会导致编译出错等问题。</p>
+          </div>
+
+
+
+<h1 id="推荐的主题-Butterfly"><a href="#推荐的主题-Butterfly" class="headerlink" title="推荐的主题-Butterfly"></a>推荐的主题-Butterfly</h1><p>Dome页：<a target="_blank" rel="noopener" href="https://demo.jerryc.me/">https://demo.jerryc.me/</a></p>
+<p>安装文档页面：<a target="_blank" rel="noopener" href="https://demo.jerryc.me/posts/21cfbf15/#%E5%AE%89%E8%A3%9D">https://demo.jerryc.me/posts/21cfbf15/#%E5%AE%89%E8%A3%9D</a></p>
+</div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Hexo/">Hexo</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2020/08/12/Win10%E7%A9%BA%E9%97%B4%E9%9F%B3%E6%95%88%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"><img class="next-cover" data-lazy-src="https://gitee.com/AlanYoungC/MarkDown-PicHub/raw/master/HexoBlog/Win10空间音效的使用方法.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Win10空间音效的使用方法</div></div></a></div></nav></article></main><footer id="footer" style="background-image: url(https://gitee.com/AlanYoungC/MarkDown-PicHub/raw/master/HexoBlog/Hexo建立个人博客.png)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2020 By AlanYoungC</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">学习让我明白自己的无知</div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div class="aplayer no-destroy" data-id="5173311486" data-server="netease"" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="auto" data-autoplay="true" data-volume="0.4" muted></div><script defer="defer" id="ribbon_piao" mobile="true" src="/js/third-party/piao.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  'meta[name=description]',
+  '#config_change',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if () {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+const pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+})
+
+document.addEventListener('pjax:complete', function () {
+  refreshFn()
+
+  $('script[data-pjax]').each(function () {
+    $(this).parent().append($(this).remove())
+  })
+
+  GLOBAL_CONFIG.islazyload && lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  if (typeof gtag === 'function') {
+    gtag('config', '', {'page_path': window.location.pathname});
+  }
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+})
+
+document.addEventListener('pjax:send', function () {
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  $(window).off('scroll')
+
+  //reset readmode
+  $('body').hasClass('read-mode') && $('body').removeClass('read-mode')
+
+  //reset font-size
+  $('body').css('font-size') !== originFontSize && $('body').css('font-size', parseFloat(originFontSize))
+})</script></div></body></html>
