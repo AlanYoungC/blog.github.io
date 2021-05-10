@@ -1,0 +1,217 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>为什么我想换到苹果生态？ | Alan's Blog</title><meta name="description" content="大多数人不愿意进入安卓的原因 网上关于这个问题的阐述与解答其实不在少数，大致原因可分为如下几类 •   苹果与安卓的游戏存档不互通（大多数手游如此） •   苹果有些软件属于独占应用，没办法迁移到安卓上面 •   苹果的iCloud是一大优势，能支持不同苹果设备间「接力」协作以及快速的数据同步 •   iOS系统干净，流畅，省电。特别在于干净这点，这是国内很多安卓厂商那些定制UI都做不到的点。 #"><meta name="keywords" content="念念碎"><meta name="author" content="AlanYoungC"><meta name="copyright" content="AlanYoungC"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://yoursite.com/2021/05/07/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E6%83%B3%E6%8D%A2%E5%88%B0%E8%8B%B9%E6%9E%9C%E7%94%9F%E6%80%81/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="为什么我想换到苹果生态？"><meta property="og:url" content="http://yoursite.com/2021/05/07/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E6%83%B3%E6%8D%A2%E5%88%B0%E8%8B%B9%E6%9E%9C%E7%94%9F%E6%80%81/"><meta property="og:site_name" content="Alan's Blog"><meta property="og:description" content="大多数人不愿意进入安卓的原因 网上关于这个问题的阐述与解答其实不在少数，大致原因可分为如下几类 •   苹果与安卓的游戏存档不互通（大多数手游如此） •   苹果有些软件属于独占应用，没办法迁移到安卓上面 •   苹果的iCloud是一大优势，能支持不同苹果设备间「接力」协作以及快速的数据同步 •   iOS系统干净，流畅，省电。特别在于干净这点，这是国内很多安卓厂商那些定制UI都做不到的点。 #"><meta property="og:image" content="https://gitee.com/AlanYoungC/MarkDown-PicHub/raw/master/念念碎/为什么我想换到苹果生态头图.png"><meta property="article:published_time" content="2021-05-07T02:58:00.000Z"><meta property="article:modified_time" content="2021-05-10T11:37:49.963Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.0.2',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: {"limitCount":10,"languages":{"author":"作者: AlanYoungC","link":"链接: ","source":"来源: Alan's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: true    
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2021-05-10 19:37:49'
+}</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><style type="text/css">#toggle-sidebar {bottom: 80px}</style><meta name="generator" content="Hexo 5.0.2"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="/personalsource/userimg.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">9</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">7</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><div id="sidebar"><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E5%A4%9A%E6%95%B0%E4%BA%BA%E4%B8%8D%E6%84%BF%E6%84%8F%E8%BF%9B%E5%85%A5%E5%AE%89%E5%8D%93%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="toc-number">1.</span> <span class="toc-text">大多数人不愿意进入安卓的原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%80%A2-iOS%E7%B3%BB%E7%BB%9F%E5%B9%B2%E5%87%80%EF%BC%8C%E6%B5%81%E7%95%85%EF%BC%8C%E7%9C%81%E7%94%B5%E3%80%82%E7%89%B9%E5%88%AB%E5%9C%A8%E4%BA%8E%E5%B9%B2%E5%87%80%E8%BF%99%E7%82%B9%EF%BC%8C%E8%BF%99%E6%98%AF%E5%9B%BD%E5%86%85%E5%BE%88%E5%A4%9A%E5%AE%89%E5%8D%93%E5%8E%82%E5%95%86%E9%82%A3%E4%BA%9B%E5%AE%9A%E5%88%B6UI%E9%83%BD%E5%81%9A%E4%B8%8D%E5%88%B0%E7%9A%84%E7%82%B9%E3%80%82"><span class="toc-number">2.</span> <span class="toc-text">•   iOS系统干净，流畅，省电。特别在于干净这点，这是国内很多安卓厂商那些定制UI都做不到的点。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%A6%E5%A4%96%E6%88%91%E4%B9%8B%E5%89%8D%E7%94%A8%E8%BF%87%E7%9A%84%E3%80%8C%E6%A0%BC%E8%87%B4%E6%97%A5%E8%AE%B0%E3%80%8D%E4%B9%9F%E4%BC%9A%E5%87%BA%E7%8E%B0%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%BE%91%E6%97%B6%E5%A4%A7%E6%AE%B5%E4%B8%A2%E6%95%B0%E6%8D%AE%E7%9A%84%E6%83%85%E5%86%B5%EF%BC%8C%E4%BB%96%E6%98%AF%E4%BE%9D%E8%B5%96%E7%9A%84%E8%87%AA%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%99%A8%E3%80%82"><span class="toc-number">3.</span> <span class="toc-text">另外我之前用过的「格致日记」也会出现跨平台编辑时大段丢数据的情况，他是依赖的自建服务器。</span></a></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://gitee.com/AlanYoungC/MarkDown-PicHub/raw/master/念念碎/为什么我想换到苹果生态头图.png)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Alan's Blog</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">为什么我想换到苹果生态？</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-07T02:58:00.000Z" title="发表于 2021-05-07 10:58:00">2021-05-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-10T11:37:49.963Z" title="更新于 2021-05-10 19:37:49">2021-05-10</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h2 id="大多数人不愿意进入安卓的原因"><a class="header-anchor" href="#大多数人不愿意进入安卓的原因"></a>大多数人不愿意进入安卓的原因</h2>
+<p>网上关于这个问题的阐述与解答其实不在少数，大致原因可分为如下几类</p>
+<p>•   苹果与安卓的游戏存档不互通（大多数手游如此）</p>
+<p>•   苹果有些软件属于独占应用，没办法迁移到安卓上面</p>
+<p>•   苹果的iCloud是一大优势，能支持不同苹果设备间「接力」协作以及快速的数据同步</p>
+<h2 id="•-iOS系统干净，流畅，省电。特别在于干净这点，这是国内很多安卓厂商那些定制UI都做不到的点。"><a class="header-anchor" href="#•-iOS系统干净，流畅，省电。特别在于干净这点，这是国内很多安卓厂商那些定制UI都做不到的点。"></a>•   iOS系统干净，流畅，省电。特别在于干净这点，这是国内很多安卓厂商那些定制UI都做不到的点。</h2>
+<p>##从跨平台笔记APP来看不愿进入安卓的原因<br>
+我对于为什么习惯了苹果生态后不愿意换到安卓的思考，源于目前各类跨平台笔记APP的现状展开。</p>
+<p>目前市面上有大公司背书的笔记类 APP 也就只有那几个，但是若是用户想要更多多样化的选择，就不得不跳出低风险区域（虽然大公司背书的 APP 也不怎么安全），进入风险相对较高的基于个人开发者或小团队创建的 APP 中。其实关于跨平台笔记类APP的其中核心矛盾就在于「数据的存储与同步方式」，这背后体现了大多数用户对于APP自有服务器的不信任。</p>
+<p>毕竟在「酷安」出名的一堆 APP 里，跑路、不稳定、只想圈钱等状况大有所在。</p>
+<p>###1-以iCloud作为同步以及云储存媒介</p>
+<blockquote>
+<p>得益于 Apple 在慢慢打破&quot;iOS～iPadOS～macOS&quot;之间的壁垒，以后三系统之间的协作以及 APP 开发将变的更加容易。<br>
+优点：iCloud 的背后是 Apple，他的强背书相较于一众自建服务器的 APP，给到用户的安全感更多<br>
+缺点：无法实现广义的跨平台。因为 iCloud 的数据不看可被三方系统读取与写入，从而杜绝了跨平台到苹果生态之外的地方。对于用户来说，使用成本相对较高。</p>
+</blockquote>
+<p>###2-依赖自建服务器<br>
+优点：对于开发者来说，数据的传输，API的配置等等方面，会比使用第三方同步云盘更加方便，数据稳定性更高。对于用户来说，不必接触繁杂难懂的第三方云盘配置过程，易用性较高。<br>
+缺点：对于开发者来说，后期的持续投入较高，若不是订阅制度，很容易导致服务器运行成本过高而放弃维护等。对于用户来说，数据在开发者手里，一是担心安全问题，二是担心数据是否稳定的问题。像上面提到的，若是后期开发者由于资金问题停止了APP服务器的维护，数据是否还能取回？若是要迁移到其他APP，数据导出的方式是否方便快捷？</p>
+<p>###3-依赖第三方同步云盘</p>
+<blockquote>
+<p>目前国内可以正常使用的几乎只有坚果云的WebDav，其他如&quot;百度网盘&quot;、“阿里网盘”、“115网盘”、“天翼云盘&quot;等都是封闭的同步协议，几乎没有可能拿到三方授权且用作同步盘。而国外可采用的就比较多了，如&quot;Google Drive”、“Dropex”、&quot;OneDrive&quot;等都可以在大多数Play Store下载的APP里面见到。</p>
+</blockquote>
+<pre><code>优点：数据掌握在用户手中，一般都是以&quot;TXT&quot;，&quot;Markdown&quot;等公开格式储存在云端。即使开发者跑路，也可以拿到数据，防止服务器关闭后取不回数据的囧况。
+缺点：前期配置较为麻烦，且同步稳定性受网盘提供商而定，不排除出现数据同步出错，重复，丢失等问题。大多数网盘对于一定时间内的同步次数做了限制，不适合用于即使同步协作。
+</code></pre>
+<hr>
+<p>##在实际使用中遇到的一些问题</p>
+<ul>
+<li>
+<p>依赖 iCloud 的 APP稳定性很不错：几乎不会出现例如数据丢失，重复或同步错误等情况。<br>
+<code>代表 APP：熊掌记、Mention、Taio、iNote、Agenda</code></p>
+</li>
+<li>
+<p>依赖自建服务器的独立开发者 APP：出现的问题还蛮多，比如同步不及时，同步重复，同步出错，数据丢失，开发者跑路等问题比比皆是。<br>
+<code>代表 APP：专注笔记、麻雀记</code></p>
+</li>
+<li>
+<p>大公司背书的笔记类 APP：虽然有公司的信用背书可以保证用户数据的安全，至少即使要下架也会提前预留导出时间和通道。但是仍然存在&quot;丢笔记，同步重复&quot;等情况。另外订阅制较贵也算得上是一个小小的缺点。<br>
+<code>代表 APP：有道云笔记、为知笔记、印象笔记</code></p>
+</li>
+<li>
+<p>依赖第三方云服务的 APP：一般以离线为主，网络备份只是一个定期的备份策略。不会用于协作，相对于来说数据大部分时间都在本地，不存在需要服务器判断时间戳判断更新等操作。所以相对来说不会出现类似于丢数据，数据重复等问题。在安全方面来说也比较可靠，即便是开发者跑路，数据也是以公开格式储存的，不会导致数据无法提取的问题（大多数情况是这样）。<br>
+<code>代表 APP：纯纯写作、喵嘀、nian 单机笔记、Joplin</code></p>
+</li>
+</ul>
+<hr>
+<p>##总结<br>
+以我自己的需求层面来看，我想留在苹果生态之内，是因为<strong>苹果在生产力以及协作，以及云服务方面的稳定性打动了我。</strong></p>
+<p>像之前用过的有道云笔记，就多次出现文件重复的问题。比如我写了一篇文章「1」，若是我在 iPad 上编辑一次，在电脑上编辑一次，在笔记列表里就很有可能出现「1（1）」、「1（2）」，并且会随着你编辑的次数越多，产生的重复文件也越多。</p>
+<h2 id="另外我之前用过的「格致日记」也会出现跨平台编辑时大段丢数据的情况，他是依赖的自建服务器。"><a class="header-anchor" href="#另外我之前用过的「格致日记」也会出现跨平台编辑时大段丢数据的情况，他是依赖的自建服务器。"></a>另外我之前用过的「格致日记」也会出现跨平台编辑时大段丢数据的情况，他是依赖的自建服务器。</h2>
+<p>年轻的时候我们都喜欢去折腾，刷机，越狱，ROOT，尝试各种各样的新软件或者是插件。可是随着年龄的增长，越来越发现，稳定才是我最需要的。不论是系统，软件，还是各种服务。</p>
+<p>因为经历的多了才发现：<strong>不稳定的东西只会在你最关键的时刻要了你的命，抑或是浪费你在调试他的时间上。</strong></p>
+<p>所以，我想换到苹果的生态。</p>
+</div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%BF%B5%E5%BF%B5%E7%A2%8E/">念念碎</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2020/08/27/%E5%B8%B8%E7%94%A8Chrome%E6%8F%92%E4%BB%B6/"><img class="next-cover" data-lazy-src="https://gitee.com/AlanYoungC/MarkDown-PicHub/raw/master/HexoBlog/金牌Chrome插件头图.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">金牌Chrome插件</div></div></a></div></nav></article></main><footer id="footer" style="background-image: url(https://gitee.com/AlanYoungC/MarkDown-PicHub/raw/master/念念碎/为什么我想换到苹果生态头图.png)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By AlanYoungC</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">学习让我明白自己的无知</div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div class="aplayer no-destroy" data-id="5173311486" data-server="netease"" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="auto" data-autoplay="true" data-volume="0.4" muted></div><script defer="defer" id="ribbon_piao" mobile="true" src="/js/third-party/piao.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  'meta[name=description]',
+  '#config_change',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if () {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+const pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+})
+
+document.addEventListener('pjax:complete', function () {
+  refreshFn()
+
+  $('script[data-pjax]').each(function () {
+    $(this).parent().append($(this).remove())
+  })
+
+  GLOBAL_CONFIG.islazyload && lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  if (typeof gtag === 'function') {
+    gtag('config', '', {'page_path': window.location.pathname});
+  }
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+})
+
+document.addEventListener('pjax:send', function () {
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  $(window).off('scroll')
+
+  //reset readmode
+  $('body').hasClass('read-mode') && $('body').removeClass('read-mode')
+
+  //reset font-size
+  $('body').css('font-size') !== originFontSize && $('body').css('font-size', parseFloat(originFontSize))
+})</script></div></body></html>
